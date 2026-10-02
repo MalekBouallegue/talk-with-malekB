@@ -212,11 +212,8 @@ export default function Home() {
                   Global Learner Feedback
                 </span>
                 <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">
-                  What People Say About Working With Malek
+                  Testimonials
                 </h2>
-                <p className="text-slate-600 text-sm mt-1">
-                  Hover over any card to pause and read.
-                </p>
               </div>
 
               {/* Scrolling Loop Container */}
