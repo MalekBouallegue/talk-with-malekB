@@ -145,10 +145,10 @@ export default function Home() {
         
         {/* TAB 1: HOME */}
         {activeTab === 'home' && (
-          <div className="space-y-16 text-center max-w-3xl mx-auto">
+          <div className="space-y-16 text-center max-w-5xl mx-auto">
             
-            {/* Clean Hero Header */}
-            <div className="space-y-6 pt-4">
+            {/* Hero Header */}
+            <div className="space-y-6 pt-4 max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Speak English or Arabic with confidence.
               </h1>
@@ -173,7 +173,7 @@ export default function Home() {
             </div>
 
             {/* Feature Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-2 max-w-4xl mx-auto">
               <div className="bg-white/90 backdrop-blur p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold mb-4 text-xl">
                   🎯
@@ -204,6 +204,114 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            {/* Continuous Marquee Feedback Slider */}
+            <div className="pt-10 space-y-6 overflow-hidden">
+              <div className="text-center max-w-xl mx-auto px-4">
+                <span className="text-emerald-700 font-bold text-xs uppercase tracking-widest bg-emerald-100/80 px-3 py-1 rounded-full">
+                  Global Learner Feedback
+                </span>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">
+                  What People Say About Working With Malek
+                </h2>
+                <p className="text-slate-600 text-sm mt-1">
+                  Hover over any card to pause and read.
+                </p>
+              </div>
+
+              {/* Scrolling Loop Container */}
+              <div className="relative w-full overflow-hidden py-4">
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+                <div className="animate-marquee gap-6 px-4">
+                  {[
+                    { 
+                      name: "Student Review", 
+                      country: "International Learner", 
+                      quote: "Malek is a mentor you feel comfortable with from the very first moment. She gives you time to think and reflect, and always seeks honest feedback on each session." 
+                    },
+                    { 
+                      name: "Hannah B.", 
+                      country: "Germany", 
+                      quote: "Malek made learning spoken Arabic feel approachable right from day one. My grammar and sentence flow improved noticeably without feeling like a strict class." 
+                    },
+                    { 
+                      name: "Sofia M.", 
+                      country: "Spain", 
+                      quote: "I always hesitated before speaking English, but Malek helped me get over that mental block. My speaking rhythm feels so much more natural now." 
+                    },
+                    { 
+                      name: "Kenji T.", 
+                      country: "Japan", 
+                      quote: "Practicing Arabic dialogue with Malek helped me bridge the gap between textbook rules and actual daily conversation." 
+                    },
+                    { 
+                      name: "Lucas S.", 
+                      country: "Brazil", 
+                      quote: "Working on my spoken English with Malek gave me the clarity I needed to express complex thoughts smoothly." 
+                    },
+                    { 
+                      name: "Maya L.", 
+                      country: "Canada", 
+                      quote: "The sessions are engaging and completely focused on real interaction. My English fluency has leveled up fast." 
+                    }
+                  ].concat([
+                    { 
+                      name: "Student Review", 
+                      country: "International Learner", 
+                      quote: "Malek is a mentor you feel comfortable with from the very first moment. She gives you time to think and reflect, and always seeks honest feedback on each session." 
+                    },
+                    { 
+                      name: "Hannah B.", 
+                      country: "Germany", 
+                      quote: "Malek made learning spoken Arabic feel approachable right from day one. My grammar and sentence flow improved noticeably without feeling like a strict class." 
+                    },
+                    { 
+                      name: "Sofia M.", 
+                      country: "Spain", 
+                      quote: "I always hesitated before speaking English, but Malek helped me get over that mental block. My speaking rhythm feels so much more natural now." 
+                    },
+                    { 
+                      name: "Kenji T.", 
+                      country: "Japan", 
+                      quote: "Practicing Arabic dialogue with Malek helped me bridge the gap between textbook rules and actual daily conversation." 
+                    },
+                    { 
+                      name: "Lucas S.", 
+                      country: "Brazil", 
+                      quote: "Working on my spoken English with Malek gave me the clarity I needed to express complex thoughts smoothly." 
+                    },
+                    { 
+                      name: "Maya L.", 
+                      country: "Canada", 
+                      quote: "The sessions are engaging and completely focused on real interaction. My English fluency has leveled up fast." 
+                    }
+                  ]).map((item, idx) => (
+                    <div 
+                      key={idx}
+                      className="w-80 md:w-96 flex-shrink-0 bg-white/90 backdrop-blur p-6 rounded-2xl border border-slate-200/80 shadow-sm text-left flex flex-col justify-between"
+                    >
+                      <div>
+                        <p className="text-slate-700 text-xs md:text-sm leading-relaxed italic">
+                          "{item.quote}"
+                        </p>
+                      </div>
+                      <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">
+                          {item.name[0]}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-slate-900 text-sm">{item.name}</h4>
+                          <p className="text-xs text-slate-500 font-medium">{item.country}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         )}
 
