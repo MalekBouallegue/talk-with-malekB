@@ -273,54 +273,84 @@ export default function Home() {
           </div>
         )}
 
-        {/* TAB 3: HOW IT WORKS */}
+{/* TAB 3: HOW IT WORKS */}
         {activeTab === 'how' && (
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div>
+          <div className="max-w-6xl mx-auto space-y-8">
+            <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-3xl font-extrabold text-slate-900 mb-2">How It Works</h2>
               <p className="text-slate-600">A simple, stress-free process to start speaking comfortably.</p>
             </div>
 
-            <div className="space-y-4 text-left">
-              <div className="bg-white/90 backdrop-blur p-6 rounded-2xl border border-slate-200/80 shadow-sm flex gap-5 items-start">
-                <span className="bg-emerald-100 text-emerald-800 font-black text-lg px-3 py-1 rounded-xl">01</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Book Your Free 30-Minute Intro Call</h3>
-                  <p className="text-slate-600 text-sm mt-1">We start with a 100% free 30-minute conversation. No pressure, no credit card needed. This gives us a chance to meet and see if you feel comfortable talking with me.</p>
+            {/* 3-Column Layout: Left Teaching Photo | Middle 4 Steps | Right Teaching Photo */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              
+              {/* Left Teaching Photo */}
+              <div className="lg:col-span-3 order-2 lg:order-1 flex justify-center">
+                <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200/80 w-full max-w-sm lg:max-w-none h-72 lg:h-[440px]">
+                  <img 
+                    src="/teaching-left.jpg" 
+                    alt="Malek teaching and facilitating a session" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
-              <div className="bg-white/90 backdrop-blur p-6 rounded-2xl border border-slate-200/80 shadow-sm flex gap-5 items-start">
-                <span className="bg-emerald-100 text-emerald-800 font-black text-lg px-3 py-1 rounded-xl">02</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Choose Video or Audio Call</h3>
-                  <p className="text-slate-600 text-sm mt-1">You decide how we connect! If camera pressure makes you nervous, we can start with a standard phone or audio call.</p>
+              {/* Middle 4-Step List */}
+              <div className="lg:col-span-6 order-1 lg:order-2 space-y-4">
+                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl border border-slate-200/80 shadow-sm flex gap-4 items-start">
+                  <span className="bg-emerald-100 text-emerald-800 font-black text-base px-3 py-1 rounded-xl flex-shrink-0">01</span>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-base">Book Your Free 30-Minute Intro Call</h3>
+                    <p className="text-slate-600 text-xs mt-1 leading-relaxed">We start with a 100% free 30-minute conversation. No pressure, no credit card needed. This gives us a chance to meet and see if you feel comfortable talking with me.</p>
+                  </div>
+                </div>
+
+                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl border border-slate-200/80 shadow-sm flex gap-4 items-start">
+                  <span className="bg-emerald-100 text-emerald-800 font-black text-base px-3 py-1 rounded-xl flex-shrink-0">02</span>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-base">Choose Video or Audio Call</h3>
+                    <p className="text-slate-600 text-xs mt-1 leading-relaxed">You decide how we connect! If camera pressure makes you nervous, we can start with a standard phone or audio call.</p>
+                  </div>
+                </div>
+
+                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl border border-slate-200/80 shadow-sm flex gap-4 items-start">
+                  <span className="bg-emerald-100 text-emerald-800 font-black text-base px-3 py-1 rounded-xl flex-shrink-0">03</span>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-base">Enjoy Real 1-on-1 Conversation</h3>
+                    <p className="text-slate-600 text-xs mt-1 leading-relaxed">We talk about everyday topics, interest areas, or practice scenarios. No strict textbooks or boring grammar drills.</p>
+                  </div>
+                </div>
+
+                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl border border-slate-200/80 shadow-sm flex gap-4 items-start">
+                  <span className="bg-emerald-100 text-emerald-800 font-black text-base px-3 py-1 rounded-xl flex-shrink-0">04</span>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-base">Continue At Your Own Pace ($10 / call)</h3>
+                    <p className="text-slate-600 text-xs mt-1 leading-relaxed">If you enjoy our first session, you can book regular 1-on-1 sessions for $10 per call whenever you want to practice.</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-white/90 backdrop-blur p-6 rounded-2xl border border-slate-200/80 shadow-sm flex gap-5 items-start">
-                <span className="bg-emerald-100 text-emerald-800 font-black text-lg px-3 py-1 rounded-xl">03</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Enjoy Real 1-on-1 Conversation</h3>
-                  <p className="text-slate-600 text-sm mt-1">We talk about everyday topics, interest areas, or practice scenarios. No strict textbooks or boring grammar drills.</p>
+              {/* Right Teaching Photo */}
+              <div className="lg:col-span-3 order-3 flex justify-center">
+                <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200/80 w-full max-w-sm lg:max-w-none h-72 lg:h-[440px]">
+                  <img 
+                    src="/teaching-right.jpg" 
+                    alt="Malek engaging with learners during a workshop" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
-              <div className="bg-white/90 backdrop-blur p-6 rounded-2xl border border-slate-200/80 shadow-sm flex gap-5 items-start">
-                <span className="bg-emerald-100 text-emerald-800 font-black text-lg px-3 py-1 rounded-xl">04</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Continue At Your Own Pace ($10 / call)</h3>
-                  <p className="text-slate-600 text-sm mt-1">If you enjoy our first session, you can book regular 1-on-1 sessions for $10 per call whenever you want to practice.</p>
-                </div>
-              </div>
             </div>
 
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-full transition shadow-md"
-            >
-              Start With A Free 30-Min Call
-            </button>
+            <div className="text-center pt-2">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-full transition shadow-md"
+              >
+                Start With A Free 30-Min Call
+              </button>
+            </div>
           </div>
         )}
 
